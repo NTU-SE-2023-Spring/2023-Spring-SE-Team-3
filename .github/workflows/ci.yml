@@ -1,0 +1,28 @@
+name: Java Compile
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+
+    - name: Compile Java code
+      run: |
+        mkdir bin
+        find . -name "*.java" -print0 | xargs -0 javac -d bin
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Java binary
+        path: bin/
