@@ -1,0 +1,38 @@
+name: Java Compile
+
+on: push
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Compile Java code
+      run: |
+        scripts=$(find . -name "build.sh")
+        for script in $scripts
+        do
+          bash $script
+          if [ "$?" -ne "0" ]; then
+            exit 1
+          fi
+        done
+    - name: Test Java code
+      run: |
+        scripts=$(find . -name "test.sh")
+        for script in $scripts
+        do
+          bash $script
+          if [ "$?" -ne "0" ]; then
+            exit 1
+          fi
+        done
