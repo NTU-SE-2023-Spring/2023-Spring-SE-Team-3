@@ -27,7 +27,7 @@ public class Main {
     public static void createNewDocument(String typ){
         switch (typ) {
             case "Draw":
-                DrawDocument d = new DrawDocument();
+                DrawingDocument d = new DrawingDocument();
                 Docs.add(d);
             break;
             case "Text":
