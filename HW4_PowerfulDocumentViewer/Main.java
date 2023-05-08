@@ -27,11 +27,11 @@ public class Main {
     public static void createNewDocument(String typ){
         switch (typ) {
             case "Draw":
-                DrawDoc d = new DrawDoc();
+                DrawDocument d = new DrawDocument();
                 Docs.add(d);
             break;
             case "Text":
-                TextDoc t = new TextDoc();
+                TextDocument t = new TextDocument();
                 Docs.add(t);
             break;
             default:

@@ -1,5 +1,5 @@
-public class DrawDoc extends Document{
-    DrawDoc(){
+public class DrawDocument extends Document{
+    DrawDocument(){
         type="DrawDocument";
     }
     public void present(){
