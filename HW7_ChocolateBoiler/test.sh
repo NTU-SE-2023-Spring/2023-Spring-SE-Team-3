@@ -14,8 +14,8 @@ fi
 echo "sample 1 AC"
 
 echo "sample 2"
-java Main sampleInput2.in > output.out
-diff output.out sampleOutput2.out
+java Main sampleInput2.in > output2.out
+diff output2.out sampleOutput2.out
 if [ "$?" -ne "0" ]; then
   echo "sample 2 WA"
   exit 1
