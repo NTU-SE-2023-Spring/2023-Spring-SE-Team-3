@@ -7,20 +7,21 @@ public class LibrarySystem {
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
     private ArrayList<BorrowRecord> borrowRecords = new ArrayList<>();
+    private ArrayList<String> transactions;
     LibrarySystem(){
         
     }
 
-    public void checkOutBook(String staff,String borrower, Book bk){
+    public void checkOutBook(String staff,String borrower, ArrayList<Integer> ids){
         
     }
-    public void returnBook(String staff, Book bk){
+    public void returnBook(String staff, int book_id){
 
     }
     public void addBook(String staff, String subject, String author){
 
     }
-    public void removeBook(String staff, Book bk){
+    public void removeBook(String staff, int book_id){
 
     }
     public void getBooksByAuthor(String author){
@@ -29,7 +30,30 @@ public class LibrarySystem {
     public void getBooksBySubject(String sub){
 
     }
+    public void getBooksByBorrower(String staff, String borrower){
 
+    }
+    public void getLastCheckedBorrowerByBook(String staff, int book_id){
+
+    }
+    public void addRecord(User staff, User borrower, Book bk){
+
+    }
+    public void addUser(String type, String name, int preDefinedNumber){
+
+    }
+    public boolean hasBook(int id){
+        return false;
+    }
+    public boolean hasUser(String User){
+        return false;
+    }
+    public Book findBook(int id){
+        
+    }
+    public User findUser(String name){
+        
+    }
 
 
 
