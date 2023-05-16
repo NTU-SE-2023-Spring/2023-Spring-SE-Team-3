@@ -50,6 +50,7 @@ public class Staff extends User{
                 Book b = bk.get(i);
                 borrower.checkedOutBook.add(b);
                 lib.addRecord(this, borrower, b);
+                b.isAvaliable=false;
             }
         }
         
@@ -75,6 +76,7 @@ public class Staff extends User{
     @Override
     public void getLastCheckedBorrowerByBook(Book bk) {
         if (bk.isRemove){
+            System.out.println("here");
             System.out.println("Error");
             return;
         }

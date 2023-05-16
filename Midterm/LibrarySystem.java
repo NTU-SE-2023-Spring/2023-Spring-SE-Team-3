@@ -49,49 +49,79 @@ public class LibrarySystem {
         }
     }
     public void addBook(String staff, String subject, String author){
-        Book bk = new Book(books.size(), author, subject);
-        books.add(bk);
-    }
-    public void removeBook(String staff, int book_id){
-        if(!hasBook(book_id)){
-            System.out.println("Error");
-            return;
-        }
-        Book bk = findBook(book_id);
         if(hasUser(staff)){
             User usr = findUser(staff);
-            usr.removeBook(bk);
-            return;
+            if (usr instanceof Staff){
+                Book bk = new Book(books.size(), author, subject);
+                this.books.add(bk);
+                return;
+            } else {
+                System.out.println("Borrower can not add book");
+                return;
+            }
         } else {
             System.out.println("Error");
             return;            
         }        
+
+        
+    }
+    public void removeBook(String staff, int book_id){
+        if(hasUser(staff)){
+            User usr = findUser(staff);
+            if (usr instanceof Staff) {
+                if(!hasBook(book_id)){
+                    System.out.println("Error");
+                    return;
+                }
+                Book bk = findBook(book_id);
+                usr.removeBook(bk);
+                return;
+            } else {
+                System.out.println("Borrower can not remove book");
+                return;
+            }
+        } else {
+            System.out.println("Error");
+            return;
+        }        
     }
     public void getBooksByAuthor(String author){
+        boolean f = false;
         for(int i=0;i<this.books.size();i++){
             if(this.books.get(i).author.equals(author)){
+                f=true;
                 Book bk = this.books.get(i);
                 System.out.println("ID: "+bk.id+" Author: "+ bk.author+ " Subject: "+bk.subject);
-                return;
             }
         }
-        System.out.println("Error");
+        if (!f) {
+            System.out.println("Error");
+        }
     }
     public void getBooksBySubject(String sub){
+        boolean f = false;
         for(int i=0;i<this.books.size();i++){
             if(this.books.get(i).subject.equals(sub)){
+                f=true;
                 Book bk = this.books.get(i);
                 System.out.println("ID: "+bk.id+" Author: "+ bk.author+ " Subject: "+bk.subject);
-                return;
             }
         }
-        System.out.println("Error");
+        if (!f){
+            System.out.println("Error");
+        }
     }
     public void getBooksByBorrower(String staff, String borrower){
         if(hasUser(staff)&&hasUser(borrower)){
             User usr = findUser(staff);
             User bor = findUser(borrower);
-            usr.getBooksByBorrower(bor);
+            if (bor instanceof Staff){
+                System.out.println("Error");
+            } else {
+                usr.getBooksByBorrower(bor);
+            }
+
             return; 
         } 
         System.out.println("Error");
@@ -171,7 +201,7 @@ public class LibrarySystem {
             fileReader = new BufferedReader(new FileReader(inputFile));
         } catch (FileNotFoundException ex) {
             // insert code to run when exception occurs
-            System.out.println("Error");
+            System.out.println("Error0");
         }
 
         Reader reader = new Reader();
@@ -184,10 +214,10 @@ public class LibrarySystem {
                 if(readBookTimes>=0){
                     break;
                 } else {
-                    System.out.println("Error");
+                    System.out.println("Error1");
                 }
             } catch (NumberFormatException e){
-                System.out.println("Error");
+                System.out.println("Error2");
             } catch (IOException e) {
                 System.out.println("No number_of_book param");
             }
@@ -199,7 +229,7 @@ public class LibrarySystem {
                 if (pass) {
                     readBookTimes-=1;
                 } else {
-                    System.out.println("Error");
+                    System.out.println("Error3");
                 }
             } catch (IOException e) {
                 System.out.println("Books not enough");
@@ -215,10 +245,10 @@ public class LibrarySystem {
                 if(addUserTimes>=0){
                     break;
                 } else {
-                    System.out.println("Error");
+                    System.out.println("Error4");
                 }
             } catch (NumberFormatException e){
-                System.out.println("Error");
+                System.out.println("Error5");
             } catch (IOException e) {
                 System.out.println("No number_of_user param");
             }
@@ -226,11 +256,11 @@ public class LibrarySystem {
         while (addUserTimes>0){
             try {
                 String uline = fileReader.readLine();
-                boolean pass = reader.parseBook(uline);
+                boolean pass = reader.parseUser(uline);
                 if (pass) {
-                    readBookTimes-=1;
+                    addUserTimes-=1;
                 } else {
-                    System.out.println("Error");
+                    System.out.println("Error6");
                 }
             } catch (IOException e) {
                 System.out.println("Books not enough");
@@ -244,7 +274,7 @@ public class LibrarySystem {
             while ((line = fileReader.readLine()) != null){
                 boolean pass = reader.parseCommand(line);
                 if (!pass){
-                    System.out.println("Error");
+                    System.out.println("Error7");
                 }
             }
         } catch (IOException ex) {
