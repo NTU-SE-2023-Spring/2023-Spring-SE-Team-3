@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class LibrarySystem {
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
-    private ArrayList<BorrowRecord> borrowRecords = new ArrayList<>();
+    public ArrayList<BorrowRecord> borrowRecords = new ArrayList<>();
     private ArrayList<String> transactions;
     LibrarySystem(){
         
@@ -33,7 +33,7 @@ public class LibrarySystem {
         }
     }
     public void returnBook(String staff, int book_id){
-        if(!hasBook(book_id){
+        if(!hasBook(book_id)){
             System.out.println("Error");
             return;
         }
@@ -53,7 +53,7 @@ public class LibrarySystem {
         books.add(bk);
     }
     public void removeBook(String staff, int book_id){
-        if(!hasBook(book_id){
+        if(!hasBook(book_id)){
             System.out.println("Error");
             return;
         }
@@ -115,11 +115,13 @@ public class LibrarySystem {
         User usr;
         if(type.equals("Staff")){
             usr  = new Staff(name, this);
+            this.users.add(usr);  
         }
         if(type.equals("Borrower")){
-            usr = new Borrower(name, this, preDefinedNumber);
+            usr = new Borrower(name, preDefinedNumber);
+            this.users.add(usr);  
         }
-        this.users.add(usr);  
+        
     }
     public boolean hasBook(int id){
         for(int i=0; i<this.books.size();i++){
