@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.Thread.State;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,46 +14,145 @@ public class LibrarySystem {
     }
 
     public void checkOutBook(String staff,String borrower, ArrayList<Integer> ids){
-        
+        ArrayList<Book> books = new ArrayList<>();
+        for(int i=0; i<ids.size();i++){
+            if(!hasBook(ids.get(i))){
+                System.out.println("Error");
+                return;
+            }
+            books.add(findBook(ids.get(i)));
+        }
+        if(hasUser(staff) && hasUser(borrower)){
+            User usr = findUser(staff);
+            User bor = findUser(borrower);
+            usr.checkOutBook(bor, books);
+            return;
+        } else {
+            System.out.println("Error");
+            return;            
+        }
     }
     public void returnBook(String staff, int book_id){
-
+        if(!hasBook(book_id){
+            System.out.println("Error");
+            return;
+        }
+        Book bk = findBook(book_id);
+    
+        if(hasUser(staff)){
+            User usr = findUser(staff);
+            usr.returnBook(bk);
+            return;
+        } else {
+            System.out.println("Error");
+            return;            
+        }
     }
     public void addBook(String staff, String subject, String author){
-
+        Book bk = new Book(books.size(), author, subject);
+        books.add(bk);
     }
     public void removeBook(String staff, int book_id){
-
+        if(!hasBook(book_id){
+            System.out.println("Error");
+            return;
+        }
+        Book bk = findBook(book_id);
+        if(hasUser(staff)){
+            User usr = findUser(staff);
+            usr.removeBook(bk);
+            return;
+        } else {
+            System.out.println("Error");
+            return;            
+        }        
     }
     public void getBooksByAuthor(String author){
-        
+        for(int i=0;i<this.books.size();i++){
+            if(this.books.get(i).author.equals(author)){
+                Book bk = this.books.get(i);
+                System.out.println("ID: "+bk.id+" Author: "+ bk.author+ " Subject: "+bk.subject);
+                return;
+            }
+        }
+        System.out.println("Error");
     }
     public void getBooksBySubject(String sub){
-
+        for(int i=0;i<this.books.size();i++){
+            if(this.books.get(i).subject.equals(sub)){
+                Book bk = this.books.get(i);
+                System.out.println("ID: "+bk.id+" Author: "+ bk.author+ " Subject: "+bk.subject);
+                return;
+            }
+        }
+        System.out.println("Error");
     }
     public void getBooksByBorrower(String staff, String borrower){
-
+        if(hasUser(staff)&&hasUser(borrower)){
+            User usr = findUser(staff);
+            User bor = findUser(borrower);
+            usr.getBooksByBorrower(bor);
+            return; 
+        } 
+        System.out.println("Error");
     }
     public void getLastCheckedBorrowerByBook(String staff, int book_id){
-
+        if(hasUser(staff)&&hasBook(book_id)){
+            User usr = findUser(staff);
+            Book bk = findBook(book_id);
+            usr.getLastCheckedBorrowerByBook(bk);
+            return; 
+        } 
+        System.out.println("Error");
     }
     public void addRecord(User staff, User borrower, Book bk){
-
+        //  TODO check staff if staff
+        
+        BorrowRecord r = new BorrowRecord(staff, borrower, bk);
+        this.borrowRecords.add(r);
     }
     public void addUser(String type, String name, int preDefinedNumber){
-
+        User usr;
+        if(type.equals("Staff")){
+            usr  = new Staff(name, this);
+        }
+        if(type.equals("Borrower")){
+            usr = new Borrower(name, this, preDefinedNumber);
+        }
+        this.users.add(usr);  
     }
     public boolean hasBook(int id){
+        for(int i=0; i<this.books.size();i++){
+            if(this.books.get(i).id == id){
+                return true;
+            }
+        }
         return false;
     }
-    public boolean hasUser(String User){
+    public boolean hasUser(String name){
+        for(int i=0; i<this.users.size();i++){
+            if(this.users.get(i).name.equals(name)){
+                return true;
+            }
+        }
         return false;
     }
     public Book findBook(int id){
-        
+        for(int i=0; i<this.books.size();i++){
+            if(this.books.get(i).id == id){
+                return this.books.get(i);
+            }
+        }
+        return new Book(0, "", "");
     }
     public User findUser(String name){
-        
+        for(int i=0; i<this.users.size();i++){
+            if(this.users.get(i).name.equals(name)){
+                return this.users.get(i);
+            }
+        }
+        // TODO
+        return this.users.get(0);      
     }
 
 
@@ -137,7 +237,6 @@ public class LibrarySystem {
         }
 
         // command loop
-        
         try {
             String line;
             while ((line = fileReader.readLine()) != null){
@@ -149,8 +248,6 @@ public class LibrarySystem {
         } catch (IOException ex) {
             System.exit(0);
         }
-
-
     }
     
     
