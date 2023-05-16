@@ -5,7 +5,7 @@ cd $BASEDIR
 echo "test ${BASEDIR}"
 
 echo "sample 1"
-java LibrarySystemn sample.in > output.out
+java LibrarySystem sample.in > output.out
 diff output.out sample.out
 if [ "$?" -ne "0" ]; then
   echo "sample 1 WA"
