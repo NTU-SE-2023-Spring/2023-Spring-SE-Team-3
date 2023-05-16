@@ -10,8 +10,7 @@ public class Staff extends User{
 
     @Override
     public void addBook(Book bk) {
-        // TODO Auto-generated method stub
-        
+        lib.books.add(bk);
     }
     @Override
     public void returnBook(Book bk) {
@@ -57,17 +56,36 @@ public class Staff extends User{
     }
     @Override
     public void removeBook(Book bk) {
-        // TODO Auto-generated method stub
-        
+        if (!bk.isAvaliable || bk.isRemove){
+            System.out.println("Error");
+        }
+        bk.isRemove = true;
     }
     @Override
     public void getBooksByBorrower(User borrower) {
-        // TODO Auto-generated method stub
+        for (int i=0;i<borrower.checkedOutBook.size();i++){
+            Book b = borrower.checkedOutBook.get(i);
+            String s;
+            s = String.format("ID: %d Author: %s Subject: %s",
+                Integer.valueOf(b.id),b.author,b.subject);
+            System.out.println(s);
+        }
         
     }
     @Override
     public void getLastCheckedBorrowerByBook(Book bk) {
-        // TODO Auto-generated method stub
+        if (bk.isRemove){
+            System.out.println("Error");
+            return;
+        }
+        for (int i=lib.borrowRecords.size()-1;i>=0;i--){
+            BorrowRecord r = lib.borrowRecords.get(i);
+            if (r.book.id==bk.id) {
+                System.out.println("User: "+r.borrower.name);
+                return;
+            }
+        }
+        System.out.println("Error");
         
     }
 }

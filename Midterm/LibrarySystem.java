@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LibrarySystem {
-    private ArrayList<Book> books = new ArrayList<>();
+    public ArrayList<Book> books = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
     public ArrayList<BorrowRecord> borrowRecords = new ArrayList<>();
     private ArrayList<String> transactions;
