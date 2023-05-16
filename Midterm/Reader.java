@@ -35,7 +35,7 @@ public class Reader {
         }
     }
     public boolean parseCommand(String s){
-        System.out.println(s);
+        // System.out.println(s);
         String[] sl = s.split(" ");
         try {
             if (status==0){

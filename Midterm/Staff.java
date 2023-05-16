@@ -59,6 +59,7 @@ public class Staff extends User{
     public void removeBook(Book bk) {
         if (!bk.isAvaliable || bk.isRemove){
             System.out.println("Error");
+            return;
         }
         bk.isRemove = true;
     }
@@ -76,7 +77,6 @@ public class Staff extends User{
     @Override
     public void getLastCheckedBorrowerByBook(Book bk) {
         if (bk.isRemove){
-            System.out.println("here");
             System.out.println("Error");
             return;
         }

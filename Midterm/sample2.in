@@ -34,6 +34,7 @@ UserD findChecked UserB
 UserC findChecked UserB
 UserA Borrower 5
 UserA Borrower 0
+UserA return 0
 UserB Borrower 0
 UserA removeBook 0
 UserA Borrower 0

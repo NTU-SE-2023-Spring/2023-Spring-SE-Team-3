@@ -201,7 +201,7 @@ public class LibrarySystem {
             fileReader = new BufferedReader(new FileReader(inputFile));
         } catch (FileNotFoundException ex) {
             // insert code to run when exception occurs
-            System.out.println("Error0");
+            System.out.println("Error");
         }
 
         Reader reader = new Reader();
@@ -214,10 +214,10 @@ public class LibrarySystem {
                 if(readBookTimes>=0){
                     break;
                 } else {
-                    System.out.println("Error1");
+                    System.out.println("Error");
                 }
             } catch (NumberFormatException e){
-                System.out.println("Error2");
+                System.out.println("Error");
             } catch (IOException e) {
                 System.out.println("No number_of_book param");
             }
@@ -229,7 +229,7 @@ public class LibrarySystem {
                 if (pass) {
                     readBookTimes-=1;
                 } else {
-                    System.out.println("Error3");
+                    System.out.println("Error");
                 }
             } catch (IOException e) {
                 System.out.println("Books not enough");
@@ -245,10 +245,10 @@ public class LibrarySystem {
                 if(addUserTimes>=0){
                     break;
                 } else {
-                    System.out.println("Error4");
+                    System.out.println("Error");
                 }
             } catch (NumberFormatException e){
-                System.out.println("Error5");
+                System.out.println("Error");
             } catch (IOException e) {
                 System.out.println("No number_of_user param");
             }
@@ -260,7 +260,7 @@ public class LibrarySystem {
                 if (pass) {
                     addUserTimes-=1;
                 } else {
-                    System.out.println("Error6");
+                    System.out.println("Error");
                 }
             } catch (IOException e) {
                 System.out.println("Books not enough");
@@ -274,7 +274,7 @@ public class LibrarySystem {
             while ((line = fileReader.readLine()) != null){
                 boolean pass = reader.parseCommand(line);
                 if (!pass){
-                    System.out.println("Error7");
+                    System.out.println("Error");
                 }
             }
         } catch (IOException ex) {
