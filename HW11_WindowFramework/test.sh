@@ -5,8 +5,8 @@ cd $BASEDIR
 echo "test ${BASEDIR}"
 
 echo "sample 1"
-java Main sampleInput.in > output.out
-diff output.out sampleOutput.out
+java Main sampleInput > output
+diff output.out sampleOutput
 if [ "$?" -ne "0" ]; then
   echo "sample 1 WA"
   exit 1
