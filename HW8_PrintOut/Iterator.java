@@ -9,7 +9,7 @@ interface Iterator {
 
 class List implements Iterator{
 
-    public String type = "List";
+
     public ArrayList<String> stringArrayList = new ArrayList<>();
     public int pos;
 
@@ -49,9 +49,9 @@ class List implements Iterator{
 
 class SkipList implements Iterator{
 
-    public String type = "SkipList";
 
-    public ArrayList<SkipNode> stringArrayList = new ArrayList<>();
+
+    public ArrayList<SkipNode> skipNodeArrayList = new ArrayList<>();
     public int pos;
 
     public int size;
@@ -71,24 +71,22 @@ class SkipList implements Iterator{
         this.pos = 0;
     }
     public Object next(){
-        SkipNode res = stringArrayList.get(pos);
+        SkipNode res = skipNodeArrayList.get(pos);
         pos +=1;
         return res;
     }
 
 
     public void addItem(String s){
-        stringArrayList.add(new SkipNode(s));
-        size = stringArrayList.size();
+        skipNodeArrayList.add(new SkipNode(s));
+        size = skipNodeArrayList.size();
     }
 
     public void getNode(int index){
-        System.out.println("SkipNode:" + stringArrayList.get(index).value);
+        System.out.println("SkipNode:" + skipNodeArrayList.get(index).value);
     }
 
-    public  void  get(int index){
-        System.out.println("SkipList do not have method get");
-    }
+
 
 
 
