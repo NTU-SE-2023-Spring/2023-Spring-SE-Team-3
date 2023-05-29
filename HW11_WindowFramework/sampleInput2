@@ -1,0 +1,4 @@
+window IconWindow XWindow
+drawCloseBox
+window TransientWindow PMWindow
+drawCloseBox
