@@ -6,7 +6,7 @@ echo "test ${BASEDIR}"
 
 echo "sample 1"
 java Main sampleInput > output
-diff output.out sampleOutput
+diff output sampleOutput
 if [ "$?" -ne "0" ]; then
   echo "sample 1 WA"
   exit 1
