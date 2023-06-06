@@ -18,7 +18,7 @@ public class MeanRankingStrategy implements RankingStrategy{
         for (int i=0;i<arr.size();i++){
             resultScoreList.add(0.0);
         }
-        System.out.println(s.reviews.toString());
+        // System.out.println(s.reviews.toString());
         for (Student rst: s.reviews.keySet()){
             ArrayList<String> Lvlarr = s.reviews.get(rst);
             for (int j=0;j<Lvlarr.size();j++){
@@ -26,8 +26,8 @@ public class MeanRankingStrategy implements RankingStrategy{
                 Double dscore = schoolStrategy.get(lvlString);
                 assert dscore != null;
                 Double resultScore = resultScoreList.get(j);
-                System.out.println(rst.ID);
-                System.out.println(s.reviews.size());
+                // System.out.println(rst.ID);
+                // System.out.println(s.reviews.size());
                 resultScore+=dscore/s.reviews.size();
                 resultScoreList.set(j, resultScore);
             }          

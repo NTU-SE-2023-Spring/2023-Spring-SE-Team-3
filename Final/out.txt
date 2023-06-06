@@ -2,107 +2,36 @@ student
 schoolStrategy
 designCriterion
 assignment
-Error: assignment: num of reviewers err
+Assignment should be reviewed by 3-5 students.
 assignment
-A1-001 was reviewed by 002. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-001 was reviewed by 003. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-001 was reviewed by 004. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
+A1-001 was reviewed by 002. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-001 was reviewed by 003. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-001 was reviewed by 004. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
 assignment
-A1-002 was reviewed by 001. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-002 was reviewed by 003. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-002 was reviewed by 004. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
+A1-002 was reviewed by 001. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-002 was reviewed by 003. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-002 was reviewed by 004. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
 assignment
-A1-003 was reviewed by 001. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-003 was reviewed by 002. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-003 was reviewed by 004. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
+A1-003 was reviewed by 001. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-003 was reviewed by 002. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-003 was reviewed by 004. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
 assignment
-A1-004 was reviewed by 001. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-004 was reviewed by 002. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
-A1-004 was reviewed by 003. Level: Knowledge/Understanding Thinking/Inquiry Communication UseOfVisualAids
+A1-004 was reviewed by 001. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-004 was reviewed by 002. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
+A1-004 was reviewed by 003. Level: [Knowledge/Understanding, Excellent, The presentation demonstrates a depth ...] [Knowledge/Understanding, Competent, The presentation uses knowledge which ...] [Knowledge/Understanding, NeedsWork, The presentation uses little relevant ...] [Thinking/Inquiry, Excellent, The presentation is centered around ...]
 printRubric
 (Knowledge/Understanding,Excellent) The presentation demonstrates a depth ...
 (Knowledge/Understanding,Competent) The presentation uses knowledge which ...
 (Knowledge/Understanding,NeedsWork) The presentation uses little relevant ...
 (Thinking/Inquiry,Excellent) The presentation is centered around ...
 averageCriterion
+Assignment: A1, Criterion: Knowledge/Understanding, AvgScore: 2.7
+Assignment: A1, Criterion: Thinking/Inquiry, AvgScore: 2.7
+Assignment: A1, Criterion: Communication, AvgScore: 2.0
+Assignment: A1, Criterion: UseOfVisualAids, AvgScore: 2.0
 calculateScore
-{Student@7852e922=[Competent, Competent, Competent, Competent], Student@15db9742=[Excellent, Excellent, Competent, Competent], Student@6d06d69c=[Excellent, Excellent, Competent, Competent]}
-004
-3
-004
-3
-004
-3
-004
-3
-002
-3
-002
-3
-002
-3
-002
-3
-003
-3
-003
-3
-003
-3
-003
-3
 Assignment: A1, Student: 001, Score: 2.3
 findStrength
-{Student@7852e922=[Competent, Competent, Competent, Competent], Student@2a139a55=[Excellent, Excellent, Competent, Competent], Student@6d06d69c=[Excellent, Excellent, Competent, Competent]}
-004
-3
-004
-3
-004
-3
-004
-3
-001
-3
-001
-3
-001
-3
-001
-3
-003
-3
-003
-3
-003
-3
-003
-3
 Assignment: A1, Student: 002, Strength: Knowledge/Understanding Thinking/Inquiry
 findWeakness
-{Student@7852e922=[Competent, Competent, Competent, Competent], Student@2a139a55=[Excellent, Excellent, Competent, Competent], Student@15db9742=[Excellent, Excellent, Competent, Competent]}
-004
-3
-004
-3
-004
-3
-004
-3
-001
-3
-001
-3
-001
-3
-001
-3
-002
-3
-002
-3
-002
-3
-002
-3
 Assignment: A1, Student: 003, Weakness:

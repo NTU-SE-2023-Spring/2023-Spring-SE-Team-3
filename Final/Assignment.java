@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class Assignment {
     public String ID;
 
-    private Map<Student,Score> studentScores = new HashMap<Student,Score>();
+    public Map<Student,Score> studentScores = new HashMap<Student,Score>();
     public Rubric criterion;
     public double average; 
     Assignment(String id, String rubricFile){

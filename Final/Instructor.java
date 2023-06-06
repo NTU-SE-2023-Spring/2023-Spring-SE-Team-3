@@ -28,7 +28,8 @@ public class Instructor {
                     break;
                 case "averageCriterion":
                     prs.averageCriterion(sl[1]);
-                    res = true;break;
+                    res = true;
+                    break;
                 case "calculateScore":
                     res = calculateScore(sl);
                     break;
