@@ -28,7 +28,7 @@ public class PeerReviewSystem {
             System.out.println("Error: printRubric: assignment not found"); 
             return;
         }
-        for (int i=0;i<A.criterion.criteria.size();i++){
+        for (int i=0;i<A.criterion.rubricData.size();i++){
             ArrayList<String> Acarr = A.criterion.rubricData.get(i);
             String res = "("+Acarr.get(0)+","+Acarr.get(1)+") "+Acarr.get(2);
             System.out.println(res);

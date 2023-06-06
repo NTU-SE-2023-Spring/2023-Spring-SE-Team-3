@@ -6,7 +6,7 @@ public class Instructor {
     }
     public boolean parseCommand(String s){
         String[] sl = s.split(" ");
-        System.out.println(sl[0]);
+        // System.out.println(sl[0]);
         boolean res = false;
         try {
             switch (sl[0]) {
