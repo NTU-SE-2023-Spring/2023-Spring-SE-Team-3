@@ -1,3 +1,0 @@
-Criterion11	Aplus	this is an apple.
-Criterion11	Bplus	this is a banana.
-Criterion11	Cplus	this is a can.

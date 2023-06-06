@@ -1,9 +1,0 @@
-Criterion1	Aplus	this is an apple.
-Criterion1	Bplus	this is a banana.
-Criterion1	Cplus	this is a can.
-Criterion2	Aplus	that is an apple.
-Criterion2	Bplus	that is a banana.
-Criterion2	Cplus	that is a can.
-Criterion3	Aplus	an apple.
-Criterion3	Bplus	a banana.
-Criterion3	Cplus	a can.
