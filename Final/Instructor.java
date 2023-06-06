@@ -84,8 +84,12 @@ public class Instructor {
         }
     }
     private boolean designCriterion(String[] sl){
-        
-        return false;
+        try {
+            prs.assignments.add(new Assignment(sl[1], sl[2]));
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
     }
     private boolean schoolStrategy(String[] sl){
         if(sl.length <= 1) {

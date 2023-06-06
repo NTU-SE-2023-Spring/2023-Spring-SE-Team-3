@@ -7,14 +7,14 @@ public class PeerReviewSystem {
     public ArrayList<Assignment> assignments = new ArrayList<>();
     public Map<String,Double> schoolStrategy = new HashMap<String,Double>();
     public Map<String,Student> students = new HashMap<String,Student>();
-    public int minReviewers;
-    public int maxReviewers;
+    public int minReviewers = 3;
+    public int maxReviewers = 5;
     public RankingStrategy rankingStrategy;
 
     public boolean setRankingStrategy(String rs){
-        if (rs=="MeanRankingStrategy"){
+        if (rs.equals("MeanRankingStrategy")){
             this.rankingStrategy=MeanRankingStrategy.getInstance();
-        } else if (rs=="MedianRankingStrategy"){
+        } else if (rs.equals("MedianRankingStrategy")){
             this.rankingStrategy=MedianRankingStrategy.getInstance();
         } else {
             System.out.println("Error: setRankingStrategy: No such strategy");
@@ -108,7 +108,7 @@ public class PeerReviewSystem {
                 strength.add(A.criterion.criteria.get(i));
             }
         }
-        String res = String.format("Assignment: %s, Student: %s, Strength:", AID, SID)
+        String res = String.format("Assignment: %s, Student: %s, Strength:", AID, SID);
         System.out.print(res);
         for(int i=0;i<strength.size();i++){
             System.out.print(" "+ strength.get(i));
@@ -151,7 +151,7 @@ public class PeerReviewSystem {
                 weakness.add(A.criterion.criteria.get(i));
             }
         }
-        String res = String.format("Assignment: %s, Student: %s, Weakness:", AID, SID)
+        String res = String.format("Assignment: %s, Student: %s, Weakness:", AID, SID);
         System.out.print(res);
         for(int i=0;i<weakness.size();i++){
             System.out.print(" "+ weakness.get(i));
@@ -185,6 +185,7 @@ public class PeerReviewSystem {
         }
         if (reviewers.size()<minReviewers || reviewers.size()>maxReviewers){
             System.out.println("Error: assignment: num of reviewers err");
+            return;
         }
         for (int i=0;i<reviewers.size();i++){
             String revfile = reviewers.get(i);
@@ -196,7 +197,8 @@ public class PeerReviewSystem {
     
     private Assignment findAssignment(String AID){
         for (int i=0;i<assignments.size();i++){
-            if (assignments.get(i).ID==AID){
+            if (assignments.get(i).ID.equals(AID)){
+                // System.out.println("here");
                 return assignments.get(i);
             }
         }

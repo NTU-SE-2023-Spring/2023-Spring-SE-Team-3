@@ -36,7 +36,7 @@ public class Rubric {
                         //     System.out.println("Error: invalid rubric");
                         // }
                         tmp.add(sl[i]);
-                        if(sl[0]!=criteriaName){
+                        if(!sl[0].equals(criteriaName)){
                             criteriaName = sl[0];
                             this.criteria.add(criteriaName);
                         }
