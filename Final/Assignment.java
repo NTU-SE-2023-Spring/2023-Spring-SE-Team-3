@@ -8,11 +8,16 @@ public class Assignment {
     Assignment(){
 
     }
-    public boolean reviewAssignment(){
-    
-    }
-    public void updateAverage(){
-        // TODO
+    public void reviewAssignment(Student student, Student reviewer, String filename){
+        
+        Score score;
+        if(studentScores.get(student)==null){
+            score = new Score();
+        } else {
+            score = studentScores.get(student);
+        }
+        reviewer.reviewAssignment(criterion.criteria.size(), filename, score);
+        
     }
 
     public void createRubric(String filename){

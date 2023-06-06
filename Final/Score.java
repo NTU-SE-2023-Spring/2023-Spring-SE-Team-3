@@ -3,8 +3,8 @@ import java.util.HashMap;
 import java.util.Map;
 public class Score {
     public Map<Student, ArrayList<String>> reviews;
+    // Student is a reviewer
     public void updateStudentScore(Student s, ArrayList<String> score){
-        // TODO
-        return;
+        this.reviews.put(s, score);
     }
 }
