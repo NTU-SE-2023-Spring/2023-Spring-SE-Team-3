@@ -1,5 +1,4 @@
 import java.util.Map;
-import java.security.GeneralSecurityException;
 import java.util.HashMap;
 public class Assignment {
     public String ID;
@@ -21,7 +20,17 @@ public class Assignment {
 
         score = studentScores.get(student);
         
-        reviewer.reviewAssignment(criterion.criteria.size(), filename, score);
+        boolean res = reviewer.reviewAssignment(criterion.criteria.size(), filename, score);
+        if(res){
+            String r = String.format("%d-%d was reviewed by %d. Level:", this.ID, student.ID, reviewer.ID);
+            System.out.print(r);
+            for(int i=0;i<this.criterion.criteria.size();i++){
+                System.out.print(" "+ this.criterion.criteria.get(i));
+            }
+            System.out.print("\n");
+        } else {
+            System.out.println("Error: invalid scoreFile");
+        }
         
     }
 

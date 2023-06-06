@@ -6,14 +6,18 @@ public class Student {
     Student(String id){
         this.ID=id;
     }
-    public void reviewAssignment(int criteriaNum, String scoreFile, Score score){
+    
+    public boolean reviewAssignment(int criteriaNum, String scoreFile, Score score){
         BufferedReader fileReader = null;
+        boolean flag = true;
         try {
             fileReader = new BufferedReader(new FileReader(scoreFile));
         } catch (FileNotFoundException ex) {
-            System.out.println("Error: invalid scoreFile");
-            // System.exit(1);
+            flag = false;
         }
+        if(flag==false)
+            return false;
+        
         String line;
         ArrayList<String> scoreStrings = new ArrayList<>();
         try {
@@ -23,8 +27,12 @@ public class Student {
                 scoreStrings.add(line);
             }
         } catch (IOException ex) {
-            System.exit(0);
+            flag = false;
         }
+        if(flag==false)
+            return false;
         score.updateStudentScore(this, scoreStrings);
+
+        return true;
     }
 }
