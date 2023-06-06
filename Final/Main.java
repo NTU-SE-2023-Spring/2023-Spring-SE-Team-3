@@ -12,7 +12,7 @@ public class Main {
             System.out.println("Error");
             System.exit(1);
         }
-        CommandReader cmdrd = new CommandReader();
+        Instructor cmdrd = new Instructor();
         String line;
         try {
             while ((line = fileReader.readLine()) != null){

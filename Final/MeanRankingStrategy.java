@@ -25,7 +25,7 @@ public class MeanRankingStrategy implements RankingStrategy{
                 Double dscore = schoolStrategy.get(lvlString);
                 assert dscore != null;
                 Double resultScore = resultScoreList.get(j);
-                resultScore+=dscore/arr.size();
+                resultScore+=dscore/s.reviews.size();
                 resultScoreList.set(j, resultScore);
             }          
         }

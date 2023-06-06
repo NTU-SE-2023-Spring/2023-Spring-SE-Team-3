@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-public class CommandReader {
+public class Instructor {
     public PeerReviewSystem prs = new PeerReviewSystem();
-    public CommandReader(){
+    public Instructor(){
         
     }
     public boolean parseCommand(String s){
@@ -48,19 +48,43 @@ public class CommandReader {
         return res;
     }
     private boolean assignment(String[] sl){
-        return false;
+        try {
+            ArrayList<String> strlist = new ArrayList<>();
+            for (int i=3;i<sl.length;i++){
+               strlist.add(sl[i]);
+            }
+            prs.assignment(sl[1],sl[2],strlist);
+            return true;
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
     }
     private boolean findWeakness(String[] sl){
-        return false;
+        try{
+            prs.findWeakness(sl[1],sl[2],sl[3]);
+            return true;
+        } catch (IndexOutOfBoundsException e){
+            return false;
+        }
     }
     private boolean findStrength(String[] sl){
-        return false;
+        try{
+            prs.findStrength(sl[1],sl[2],sl[3]);
+            return true;
+        } catch (IndexOutOfBoundsException e){
+            return false;
+        }
     }
     private boolean calculateScore(String[] sl){
-        // prs.calculateScore(null, null, null);
-        return false;
+        try{
+            prs.calculateScore(sl[1],sl[2],sl[3]);
+            return true;
+        } catch (IndexOutOfBoundsException e){
+            return false;
+        }
     }
     private boolean designCriterion(String[] sl){
+        
         return false;
     }
     private boolean schoolStrategy(String[] sl){

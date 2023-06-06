@@ -40,8 +40,6 @@ public class PeerReviewSystem {
             System.out.println("Error: averageCriterion: assignment not found"); 
             return;
         }
-        
-
     }
     public void calculateScore(String AID,String SID,String rs){
         boolean setRsCorrect = this.setRankingStrategy(rs);
@@ -64,9 +62,14 @@ public class PeerReviewSystem {
             return;
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
-        for (int i=0;i<A.criterion.criteria.size();i++){
-            
+        Double d = 0.0;
+        for (Double ds: score){
+            d+=ds;
         }
+        d = d/score.size();
+        Double rd = Math.round(d*10.0)/10.0;
+        String returningString = "Assignment: "+A.ID+", Student: "+st.ID+", Score: "+rd.toString();
+        System.out.println(returningString);
         
     }
     public void findStrength(String AID,String SID,String rs){
@@ -154,6 +157,41 @@ public class PeerReviewSystem {
             System.out.print(" "+ weakness.get(i));
         }
         System.out.print("\n");
+    }
+    public void assignment(String AID, String SID, ArrayList<String> reviewers){
+        Student st = students.get(SID);
+        if (st==null){
+            System.out.println("Error: assignment: No such student");
+            return;
+        }
+        Assignment A = findAssignment(AID);
+        if (A==null){
+            System.out.println("Error: assignment: assignment not found");
+            return;
+        }
+        for (int i=0;i<reviewers.size();i++){
+            String revfile = reviewers.get(i);
+            String[] sl = revfile.split(",");
+            try {
+                Student reviewer = students.get(sl[0]);
+                String filename = sl[1];
+                if (reviewer==null){
+                    System.out.println("Error: assignment: No such student");
+                    return;
+                }
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Error: assignment: ScoreFileName err");
+            }
+        }
+        if (reviewers.size()<minReviewers || reviewers.size()>maxReviewers){
+            System.out.println("Error: assignment: num of reviewers err");
+        }
+        for (int i=0;i<reviewers.size();i++){
+            String revfile = reviewers.get(i);
+            String[] sl = revfile.split(",");
+            Student reviewer = students.get(sl[0]);
+            A.reviewAssignment(st, reviewer, sl[1]);
+        }
     }
     
     private Assignment findAssignment(String AID){
