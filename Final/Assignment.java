@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.security.GeneralSecurityException;
 import java.util.HashMap;
 public class Assignment {
     public String ID;
@@ -27,6 +28,10 @@ public class Assignment {
     public void createRubric(String filename){
         Rubric.RubricBuilder rubricBuilder = new Rubric.RubricBuilder();
         this.criterion = rubricBuilder.setFilename(filename).setRubric().build();
+    }
+
+    public Score getScore(Student student){
+        return studentScores.get(student);
     }
  
 }
