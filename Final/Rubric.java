@@ -21,7 +21,7 @@ public class Rubric {
             try {
                 fileReader = new BufferedReader(new FileReader(this.filename));
             } catch (FileNotFoundException ex) {
-                System.out.println("Error: invalid rubric");
+                System.out.println("Error");
                 // System.exit(1);
             }
             // CommandReader cmdrd = new CommandReader();

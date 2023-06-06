@@ -29,7 +29,7 @@ public class Assignment {
             }
             System.out.print("\n");
         } else {
-            System.out.println("Error: invalid scoreFile");
+            System.out.println("Error");
         }
         
     }

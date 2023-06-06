@@ -18,7 +18,7 @@ public class Main {
             while ((line = fileReader.readLine()) != null){
                 boolean pass = cmdrd.parseCommand(line);
                 if (!pass){
-                    System.out.println("Error: parseError");
+                    System.out.println("Error");
                 }
             }
         } catch (IOException ex) {

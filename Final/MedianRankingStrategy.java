@@ -17,10 +17,10 @@ public class MedianRankingStrategy implements RankingStrategy{
         ArrayList<Double> resultScoreList = new ArrayList<>();
         Iterator<ArrayList<String>> itarrs = s.reviews.values().iterator();
         ArrayList<String> arr = itarrs.next();
-        for (int i=0;i<arr.size();i++){
-            resultScoreList.add(0.0);
-        }
-        ArrayList<ArrayList<Double>> map = new ArrayList<>(null);
+        // for (int i=0;i<arr.size();i++){
+        //     resultScoreList.add(0.0);
+        // }
+        ArrayList<ArrayList<Double>> map = new ArrayList<>(new ArrayList<>());
         for (Student rst: s.reviews.keySet()){
             ArrayList<Double> tmp = new ArrayList<>();
             ArrayList<String> Lvlarr = s.reviews.get(rst);
@@ -40,7 +40,7 @@ public class MedianRankingStrategy implements RankingStrategy{
             }
             tmp.sort(Comparator.naturalOrder());
             if(tmp.size() % 2 == 0){
-                resultScoreList.add(tmp.get(tmp.size()/2)+tmp.get(tmp.size()/2-1));
+                resultScoreList.add((tmp.get(tmp.size()/2)+tmp.get(tmp.size()/2-1))/2.0);
             }else{
                 resultScoreList.add(tmp.get(tmp.size()/2));
             }

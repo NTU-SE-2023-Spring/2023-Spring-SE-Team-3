@@ -1,32 +1,51 @@
+Cannot review one’s own assignment.
 Assignment should be reviewed by 3-5 students.
-A1-001 was reviewed by 002. Level: Excellent Excellent Competent Competent
-A1-001 was reviewed by 003. Level: Excellent Excellent Competent Competent
-A1-001 was reviewed by 004. Level: Competent Competent Competent Competent
-A1-002 was reviewed by 001. Level: Excellent Excellent Competent Competent
-A1-002 was reviewed by 003. Level: Excellent Excellent Competent Competent
-A1-002 was reviewed by 004. Level: Competent Competent Competent Competent
-A1-003 was reviewed by 001. Level: Excellent Excellent Competent Competent
-A1-003 was reviewed by 002. Level: Excellent Excellent Competent Competent
-A1-003 was reviewed by 004. Level: Competent Competent Competent Competent
-A1-004 was reviewed by 001. Level: Excellent Excellent Competent Competent
-A1-004 was reviewed by 002. Level: Excellent Excellent Competent Competent
-A1-004 was reviewed by 003. Level: Competent Competent Competent Competent
-(Knowledge/Understanding,Excellent) The presentation demonstrates a depth ...
-(Knowledge/Understanding,Competent) The presentation uses knowledge which ...
-(Knowledge/Understanding,NeedsWork) The presentation uses little relevant ...
-(Thinking/Inquiry,Excellent) The presentation is centered around ...
-(Thinking/Inquiry,Competent) The presentation shows an analytical ...
-(Thinking/Inquiry,NeedsWork) The presentation shows no analytical ...
-(Communication,Excellent) The presentation is imaginative and ...
-(Communication,Competent) Presentation techniques used are effective ...
-(Communication,NeedsWork) The presentation fails to capture ...
-(UseOfVisualAids,Excellent) The presentation includes appropriate and ...
-(UseOfVisualAids,Competent) The presentation includes appropriate visual ...
-(UseOfVisualAids,NeedsWork) The presentation includes no visual ...
-Assignment: A1, Criterion: Knowledge/Understanding, AvgScore: 2.7
-Assignment: A1, Criterion: Thinking/Inquiry, AvgScore: 2.7
-Assignment: A1, Criterion: Communication, AvgScore: 2.0
-Assignment: A1, Criterion: UseOfVisualAids, AvgScore: 2.0
-Assignment: A1, Student: 001, Score: 2.3
-Assignment: A1, Student: 002, Strength: Knowledge/Understanding Thinking/Inquiry
-Assignment: A1, Student: 003, Weakness: Communication UseOfVisualAids
+Error
+F01-aaa was reviewed by bbb. Level: Aplus Aplus Bplus
+F01-aaa was reviewed by ccc. Level: Aplus Aplus Bplus
+F01-aaa was reviewed by ddd. Level: Aplus Aplus Bplus
+F01-bbb was reviewed by aaa. Level: Aplus Aplus Bplus
+F01-bbb was reviewed by ccc. Level: Aplus Aplus Bplus
+F01-bbb was reviewed by ddd. Level: Aplus Aplus Bplus
+F01-ccc was reviewed by bbb. Level: Aplus Aplus Bplus
+F01-ccc was reviewed by aaa. Level: Aplus Aplus Bplus
+F01-ccc was reviewed by ddd. Level: Aplus Aplus Bplus
+F01-ddd was reviewed by bbb. Level: Aplus Bplus Cplus
+F01-ddd was reviewed by ccc. Level: Aplus Bplus Cplus
+F01-ddd was reviewed by aaa. Level: Aplus Bplus Cplus
+F02-aaa was reviewed by bbb. Level: Aplus
+F02-aaa was reviewed by ccc. Level: Aplus
+F02-aaa was reviewed by ddd. Level: Aplus
+(Criterion1,Aplus) this is an apple.
+(Criterion1,Bplus) this is a banana.
+(Criterion1,Cplus) this is a can.
+(Criterion2,Aplus) that is an apple.
+(Criterion2,Bplus) that is a banana.
+(Criterion2,Cplus) that is a can.
+(Criterion3,Aplus) an apple.
+(Criterion3,Bplus) a banana.
+(Criterion3,Cplus) a can.
+(Criterion11,Aplus) this is an apple.
+(Criterion11,Bplus) this is a banana.
+(Criterion11,Cplus) this is a can.
+Error
+Error
+Assignment: F01, Criterion: Criterion1, AvgScore: 4.0
+Assignment: F01, Criterion: Criterion2, AvgScore: 3.8
+Assignment: F01, Criterion: Criterion3, AvgScore: 2.8
+Assignment: F02, Criterion: Criterion11, AvgScore: 4.0
+Assignment: F03, Criterion: Criterion111, AvgScore: 0.0
+Assignment: F03, Criterion: Criterion222, AvgScore: 0.0
+Assignment: F03, Criterion: Criterion333, AvgScore: 0.0
+Assignment: F03, Criterion: Criterion444, AvgScore: 0.0
+Assignment: F03, Criterion: Criterion555, AvgScore: 0.0
+Assignment: F03, Criterion: Criterion666, AvgScore: 0.0
+Error
+Assignment: F01, Student: aaa, Score: 3.7
+Assignment: F01, Student: aaa, Score: 3.7
+Assignment: F02, Student: aaa, Score: 4.0
+Error
+Error
+Error
+Assignment: F02, Student: aaa, Strength: Criterion11
+Assignment: F02, Student: aaa, Weakness: Criterion11

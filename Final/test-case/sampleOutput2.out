@@ -10,9 +10,9 @@ F01-bbb was reviewed by ddd. Level: Aplus Aplus Bplus
 F01-ccc was reviewed by bbb. Level: Aplus Aplus Bplus
 F01-ccc was reviewed by aaa. Level: Aplus Aplus Bplus
 F01-ccc was reviewed by ddd. Level: Aplus Aplus Bplus
-F01-ddd was reviewed by bbb. Level: Aplus Aplus Bplus
-F01-ddd was reviewed by ccc. Level: Aplus Aplus Bplus
-F01-ddd was reviewed by aaa. Level: Aplus Aplus Bplus
+F01-ddd was reviewed by bbb. Level: Aplus Bplus Cplus
+F01-ddd was reviewed by ccc. Level: Aplus Bplus Cplus
+F01-ddd was reviewed by aaa. Level: Aplus Bplus Cplus
 F02-aaa was reviewed by bbb. Level: Aplus
 F02-aaa was reviewed by ccc. Level: Aplus
 F02-aaa was reviewed by ddd. Level: Aplus
@@ -31,8 +31,8 @@ F02-aaa was reviewed by ddd. Level: Aplus
 Error
 Error
 Assignment: F01, Criterion: Criterion1, AvgScore: 4.0
-Assignment: F01, Criterion: Criterion2, AvgScore: 3.7
-Assignment: F01, Criterion: Criterion3, AvgScore: 2.7
+Assignment: F01, Criterion: Criterion2, AvgScore: 3.8
+Assignment: F01, Criterion: Criterion3, AvgScore: 2.8
 Assignment: F02, Criterion: Criterion11, AvgScore: 4.0
 Assignment: F03, Criterion: Criterion111, AvgScore: 0.0
 Assignment: F03, Criterion: Criterion222, AvgScore: 0.0
@@ -42,8 +42,8 @@ Assignment: F03, Criterion: Criterion555, AvgScore: 0.0
 Assignment: F03, Criterion: Criterion666, AvgScore: 0.0
 Error
 Assignment: F01, Student: aaa, Score: 3.7
-Assignment: F01, Student: aaa, Score: 4.0
-Assignment: F02, Student: aaa, Score: 3.0
+Assignment: F01, Student: aaa, Score: 3.7
+Assignment: F02, Student: aaa, Score: 4.0
 Error
 Error
 Error

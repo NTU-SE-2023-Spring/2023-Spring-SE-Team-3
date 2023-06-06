@@ -17,7 +17,7 @@ public class PeerReviewSystem {
         } else if (rs.equals("MedianRankingStrategy")){
             this.rankingStrategy=MedianRankingStrategy.getInstance();
         } else {
-            System.out.println("Error: setRankingStrategy: No such strategy");
+            System.out.println("Error");
             return false;
         }
         return true;
@@ -25,7 +25,7 @@ public class PeerReviewSystem {
     public void printRubric(String AID){
         Assignment A = findAssignment(AID);
         if (A==null){
-            System.out.println("Error: printRubric: assignment not found"); 
+            System.out.println("Error"); 
             return;
         }
         for (int i=0;i<A.criterion.rubricData.size();i++){
@@ -38,7 +38,7 @@ public class PeerReviewSystem {
         MeanRankingStrategy mrs = MeanRankingStrategy.getInstance();
         Assignment A = findAssignment(assignmentID);
         if (A==null){
-            System.out.println("Error: averageCriterion: assignment not found"); 
+            System.out.println("Error"); 
             return;
         }
         ArrayList<Double> resultArr = new ArrayList<>();
@@ -71,17 +71,17 @@ public class PeerReviewSystem {
         }
         Student st = students.get(SID);
         if (st==null){
-            System.out.println("Error: calculateScore: No such student");
+            System.out.println("Error");
             return;
         }
         Assignment A = findAssignment(AID);
         if (A==null){
-            System.out.println("Error: calculateScore: assignment not found");
+            System.out.println("Error");
             return;
         }
         Score s = A.getScore(st);
         if (s==null){
-            System.out.println("Error: calculateScore: student do not have this score");
+            System.out.println("Error");
             return;
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
@@ -102,17 +102,17 @@ public class PeerReviewSystem {
         }
         Student st = students.get(SID);
         if (st==null){
-            System.out.println("Error: findStrength: No such student");
+            System.out.println("Error");
             return;
         }
         Assignment A = findAssignment(AID);
         if (A==null){
-            System.out.println("Error: findStrength: assignment not found");
+            System.out.println("Error");
             return;
         }
         Score s = A.getScore(st);
         if (s==null){
-            System.out.println("Error: findStrength: student do not have this score");
+            System.out.println("Error");
             return;
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
@@ -145,17 +145,17 @@ public class PeerReviewSystem {
         }
         Student st = students.get(SID);
         if (st==null){
-            System.out.println("Error: findWeakness: No such student");
+            System.out.println("Error");
             return;
         }
         Assignment A = findAssignment(AID);
         if (A==null){
-            System.out.println("Error: findWeakness: assignment not found");
+            System.out.println("Error");
             return;
         }
         Score s = A.getScore(st);
         if (s==null){
-            System.out.println("Error: findWeakness: student do not have this score");
+            System.out.println("Error");
             return;
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
@@ -183,10 +183,7 @@ public class PeerReviewSystem {
     }
     public void assignment(String AID, String SID, ArrayList<String> reviewers){
 
-        if (reviewers.size()<minReviewers || reviewers.size()>maxReviewers){
-            System.out.println("Assignment should be reviewed by 3-5 students.");
-            return;
-        }
+        
         for (int i=0;i<reviewers.size();i++){
             String revfile = reviewers.get(i);
             String[] sl = revfile.split(",");
@@ -198,21 +195,25 @@ public class PeerReviewSystem {
                 }
                 String filename = sl[1];
                 if (reviewer==null){
-                    System.out.println("Error: assignment: No such student");
+                    System.out.println("Error");
                     return;
                 }
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Error: assignment: ScoreFileName err");
+                System.out.println("Error");
             }
+        }
+        if (reviewers.size()<minReviewers || reviewers.size()>maxReviewers){
+            System.out.println("Assignment should be reviewed by 3-5 students.");
+            return;
         }
         Student st = students.get(SID);
         if (st==null){
-            System.out.println("Error: assignment: No such student");
+            System.out.println("Error");
             return;
         }
         Assignment A = findAssignment(AID);
         if (A==null){
-            System.out.println("Error: assignment: assignment not found");
+            System.out.println("Error");
             return;
         }
         for (int i=0;i<reviewers.size();i++){
