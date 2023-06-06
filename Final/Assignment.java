@@ -24,8 +24,8 @@ public class Assignment {
         if(res){
             String r = String.format("%s-%s was reviewed by %s. Level:", this.ID, student.ID, reviewer.ID);
             System.out.print(r);
-            for(int i=0;i<this.criterion.criteria.size();i++){
-                System.out.print(" "+ this.criterion.rubricData.get(i));
+            for(int i=0;i<score.reviews.get(reviewer).size();i++){
+                System.out.print(" "+ score.reviews.get(reviewer).get(i));
             }
             System.out.print("\n");
         } else {
