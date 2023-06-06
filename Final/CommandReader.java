@@ -17,7 +17,28 @@ public class CommandReader {
                     res = schoolStrategy(sl);
                     break;
                 case "designCriterion":
+                    res = designCriterion(sl);
                     break;
+                case "assignment":
+                    res = assignment(sl);
+                    break;
+                case "printRubric":
+                    prs.printRubric(sl[1]);
+                    res = true;
+                    break;
+                case "averageCriterion":
+                    prs.averageCriterion(sl[1]);
+                    res = true;break;
+                case "calculateScore":
+                    res = calculateScore(sl);
+                    break;
+                case "findStrength":
+                    res = findStrength(sl);
+                    break;
+                case "findWeakness":
+                    res = findWeakness(sl);
+                    break;
+
                 default:
                     return false;
             }
@@ -26,14 +47,21 @@ public class CommandReader {
         }
         return res;
     }
-    private boolean createStudent(String[] sl){
-        if (sl.length <= 1) {
-            return false;
-        }
-        for (int i=1;i<sl.length;i++){
-            prs.students.add(new Student(sl[i]));
-        }
-        return true;
+    private boolean assignment(String[] sl){
+        return false;
+    }
+    private boolean findWeakness(String[] sl){
+        return false;
+    }
+    private boolean findStrength(String[] sl){
+        return false;
+    }
+    private boolean calculateScore(String[] sl){
+        // prs.calculateScore(null, null, null);
+        return false;
+    }
+    private boolean designCriterion(String[] sl){
+        return false;
     }
     private boolean schoolStrategy(String[] sl){
         if(sl.length <= 1) {
@@ -50,6 +78,15 @@ public class CommandReader {
             }
         }
         // System.out.println(prs.schoolStrategy.toString());
+        return true;
+    }
+    private boolean createStudent(String[] sl){
+        if (sl.length <= 1) {
+            return false;
+        }
+        for (int i=1;i<sl.length;i++){
+            prs.students.add(new Student(sl[i]));
+        }
         return true;
     }
 }
