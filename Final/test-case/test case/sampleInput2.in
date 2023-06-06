@@ -1,0 +1,30 @@
+student aaa bbb ccc
+schoolStrategy Aplus,4 Bplus,3 Cplus,2
+student ddd
+designCriterion F01 criteria2_1.txt
+designCriterion F02 criteria2_2.txt
+assignment F01 aaa bbb,score1_1.txt aaa,score1_1.txt
+assignment F02 aaa bbb,score1_1.txt
+assignment F02 aaa wasd,score1_1.txt
+designCriterion F03 criteria2_3.txt
+assignment F01 aaa bbb,score2_1.txt ccc,score2_1.txt ddd,score2_1.txt
+assignment F01 bbb aaa,score2_1.txt ccc,score2_1.txt ddd,score2_1.txt
+assignment F01 ccc bbb,score2_1.txt aaa,score2_1.txt ddd,score2_1.txt
+assignment F01 ddd bbb,score2_2.txt ccc,score2_2.txt aaa,score2_2.txt
+assignment F02 aaa bbb,score2_2.txt ccc,score2_2.txt ddd,score2_2.txt
+printRubric F01
+printRubric F02
+printRubric Fuc03
+averageCriterion A1
+averageCriterion F01
+averageCriterion F02
+averageCriterion F03
+calculateScore A1 001 MeanRankingStrategy
+calculateScore F01 aaa MeanRankingStrategy
+calculateScore F01 aaa MedianRankingStrategy
+calculateScore F02 aaa MedianRankingStrategy
+calculateScore F02 bbb MedianRankingStrategy
+findStrength F02 002 MeanRankingStrategy
+findWeakness A1 003 MeanRankingStrategy
+findStrength F02 aaa MeanRankingStrategy
+findWeakness F02 aaa MeanRankingStrategy
