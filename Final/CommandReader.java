@@ -85,7 +85,7 @@ public class CommandReader {
             return false;
         }
         for (int i=1;i<sl.length;i++){
-            prs.students.add(new Student(sl[i]));
+            prs.students.put(sl[i],new Student(sl[i]));
         }
         return true;
     }
