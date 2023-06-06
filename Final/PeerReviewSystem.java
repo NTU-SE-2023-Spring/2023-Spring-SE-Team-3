@@ -94,7 +94,7 @@ public class PeerReviewSystem {
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
         // int strengthIndex = -1;
-        double strengthValue = -1;
+        double strengthValue = Integer.MIN_VALUE;
         for (int i=0;i<A.criterion.criteria.size();i++){
             int result = Double.compare(score.get(i), strengthValue);
             if(result > 0){
@@ -137,7 +137,7 @@ public class PeerReviewSystem {
         }
         ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
         // int strengthIndex = -1;
-        double weaknessValue = -1;
+        double weaknessValue = Integer.MAX_VALUE;
         for (int i=0;i<A.criterion.criteria.size();i++){
             int result = Double.compare(score.get(i), weaknessValue);
             if(result < 0){
