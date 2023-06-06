@@ -5,7 +5,8 @@ public class CommandReader {
         
     }
     public boolean parseCommand(String s){
-        String[] sl = s.split(s);
+        String[] sl = s.split(" ");
+        System.out.println(sl[0]);
         boolean res = false;
         try {
             switch (sl[0]) {
@@ -48,6 +49,7 @@ public class CommandReader {
                 return false;
             }
         }
+        // System.out.println(prs.schoolStrategy.toString());
         return true;
     }
 }
