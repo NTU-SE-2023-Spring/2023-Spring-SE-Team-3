@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Map;
 public interface RankingStrategy {
-    public double rank(Score s);
+    public ArrayList<Double> rank(Score s,Map<String,Double> schoolStrategy);
 }

@@ -27,7 +27,7 @@ public class PeerReviewSystem {
             return;
         }
         for (int i=0;i<A.criterion.criteria.size();i++){
-            ArrayList<String> Acarr = A.criterion.criteria.get(i);
+            ArrayList<String> Acarr = A.criterion.rubricData.get(i);
             String res = "("+Acarr.get(0)+","+Acarr.get(1)+") "+Acarr.get(2);
             System.out.println(res);
         }
@@ -56,7 +56,15 @@ public class PeerReviewSystem {
             System.out.println("Error: calculateScore: assignment not found");
             return;
         }
-        
+        Score s = A.getScore(st);
+        if (s==null){
+            System.out.println("Error: calculateScore: student do not have this score");
+            return;
+        }
+        ArrayList<Double> score = this.rankingStrategy.rank(s,schoolStrategy);
+        for (int i=0;i<A.criterion.criteria.size();i++){
+            
+        }
         
     }
     public void findStrength(String AID,String SID,String rs){

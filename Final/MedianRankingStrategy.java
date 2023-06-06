@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Map;
 public class MedianRankingStrategy implements RankingStrategy{
     private static MedianRankingStrategy instance = new MedianRankingStrategy();
     private MedianRankingStrategy(){
@@ -7,8 +9,8 @@ public class MedianRankingStrategy implements RankingStrategy{
         return instance;
     }
     @Override
-    public double rank(Score s) {
+    public ArrayList<Double> rank(Score s,Map<String,Double> schoolStrategy) {
         // TODO Auto-generated method stub
-        return 0;
+        return null;
     }
 }
